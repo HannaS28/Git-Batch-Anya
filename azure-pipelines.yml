@@ -16,12 +16,7 @@ jobs:
         restoreKeys: npm | $(Agent.OS) | package-lock.json
       displayName: Cache NPM packages
 
-    - task: CacheBeta@1
-      inputs:
-        key: cypress | $(Agent.OS) | package-lock.json
-        path: /home/vsts/.cache/Cypress
-        restoreKeys: cypress | $(Agent.OS) | package-lock.json
-      displayName: Cache Cypress binary
+ 
 
     - script: npm ci
       displayName: 'Install NPM dependencies'
